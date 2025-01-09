@@ -1,10 +1,12 @@
 import img from "../assets/sample_img.jpg";
+import cv from "../assets/Marcin-Ruszkowski-CV.pdf";
 import { Pill } from "./Pill";
 import { FaGithub, FaHeart, FaLocationDot } from "react-icons/fa6";
 import { IoIosMail } from "react-icons/io";
 import { MdCake } from "react-icons/md";
 import { FaLaptopCode } from "react-icons/fa";
 import { GrLanguage } from "react-icons/gr";
+import { TbFileCv } from "react-icons/tb";
 
 const pills = [
   { name: "Katowice, Poland", icon: <FaLocationDot /> },
@@ -14,7 +16,7 @@ const pills = [
   { name: "Dog Lover", icon: <FaHeart /> },
 ];
 
-export const Header = () => {
+export const HeaderCard = () => {
   return (
     <div className="flex flex-col items-center justify-center overflow-hidden border-2 border-[#656565] rounded-lg bg-secondary p-5 gap-5">
       <div className="flex justify-start items-center gap-8 w-full">
@@ -38,6 +40,14 @@ export const Header = () => {
               className="p-2 rounded-full hover:bg-secondary-hover"
             >
               <FaGithub />
+            </a>
+            <a
+              href={cv}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full hover:bg-secondary-hover"
+            >
+              <TbFileCv />
             </a>
           </div>
         </div>

@@ -19,7 +19,7 @@ const slugs = [
   "visualstudiocode",
 ];
 
-export function TechStack() {
+export const TechStackCard = () => {
   const images = slugs.map(
     (slug) => `https://cdn.simpleicons.org/${slug}/${slug}`
   );
@@ -42,4 +42,4 @@ export function TechStack() {
       </div>
     </div>
   );
-}
+};
