@@ -16,7 +16,6 @@ const slugs = [
   "mongodb",
   "shadcnui",
   "github",
-  "visualstudiocode",
 ];
 
 export const TechStackCard = () => {

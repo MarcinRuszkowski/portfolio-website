@@ -13,10 +13,8 @@ const cards = [
     ctaLink: "https://github.com/MarcinRuszkowski/task-manager",
     content: () => (
       <p>
-        Lana Del Rey, an iconic American singer-songwriter, is celebrated for
-        her melancholic and cinematic music style. Born Elizabeth Woolridge
-        Grant in New York City, she has captivated audiences worldwide with her
-        haunting voice and introspective lyrics.
+        Aplikacja do zarządzania zadaniami. Możliwośc dodawania, edytowania,
+        usuwania oraz filtrowania tasków.
       </p>
     ),
   },
@@ -27,8 +25,11 @@ const cards = [
     ctaLink: "https://github.com/MarcinRuszkowski/CMS-FULLSTACK",
     content: () => (
       <p>
-        Babbu Maan, a legendary Punjabi singer, is renowned for his soulful
-        voice and profound lyrics that resonate deeply with his audience.
+        Portal dla firm, w której pracownicy mogą załatwiać różne sprawy
+        związane z pracą. Planowanie nieobecności, sprawdzenie ważnych wydarzeń
+        związanych z życiem firmy, zbiór dokumentów poszczególnych spółek, itd.
+        Możliwość dodawania/edytowanie użytkowników przez admina, autoryzacji
+        użytkownika, filtrowanie pracowników z bazy po kryteriach.
       </p>
     ),
   },
@@ -39,8 +40,8 @@ const cards = [
     ctaLink: "https://github.com/MarcinRuszkowski/polish-quiz",
     content: () => (
       <p>
-        Babbu Maan, a legendary Punjabi singer, is renowned for his soulful
-        voice and profound lyrics that resonate deeply with his audience.
+        Quiz z obrazkami i ograniczoną liczbą żyć. Możliwośc restartowania gry w
+        dowolnym momencie. 5 poziomów do ukończenia gry.
       </p>
     ),
   },
@@ -51,8 +52,9 @@ const cards = [
     ctaLink: "https://github.com/MarcinRuszkowski/champa-page",
     content: () => (
       <p>
-        Babbu Maan, a legendary Punjabi singer, is renowned for his soulful
-        voice and profound lyrics that resonate deeply with his audience.
+        Prosta strona o moim psie - reproduktorze. Galeria zdjęć, osiągniecia
+        przedstawione na lini czasu wraz ze zdjęciami i opisem. Formularz
+        kontaktowy.
       </p>
     ),
   },

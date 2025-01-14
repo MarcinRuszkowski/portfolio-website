@@ -116,12 +116,12 @@ export const ExpandableCard: React.FC<ExpandableCardProps> = ({ cards }) => {
                   <motion.a
                     layoutId={`button-${active.title}-${id}`}
                     href={active.ctaLink}
+                    title={active.ctaLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-3 py-2 text-xl rounded-full font-bold bg-primary text-secondary hover:text-gray-200"
                   >
                     <FaGithub />
-
                   </motion.a>
                 </div>
                 <div className="pt-4 relative px-4">
@@ -177,7 +177,7 @@ export const ExpandableCard: React.FC<ExpandableCardProps> = ({ cards }) => {
               layoutId={`button-${card.title}-${id}`}
               className="px-4 py-2 text-sm rounded-full font-bold bg-primary hover:bg-primary-hover text-secondary hover:text-gray-200 mt-4 md:mt-0"
             >
-             <IoEyeOutline/>
+              <IoEyeOutline />
             </motion.button>
           </motion.div>
         ))}
