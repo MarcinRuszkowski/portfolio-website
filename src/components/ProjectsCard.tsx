@@ -47,7 +47,7 @@ const cards = [
   },
   {
     title: "Champa",
-    desc: "React / Tailwind / TS",
+    desc: "React / Tailwind / TS / NodeJS",
     src: champa,
     ctaLink: "https://github.com/MarcinRuszkowski/champa-page",
     content: () => (

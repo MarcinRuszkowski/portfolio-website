@@ -25,6 +25,7 @@ export const TechStackCard = () => {
 
   return (
     <div className="flex flex-col items-center justify-center overflow-hidden border-2 border-[#656565] rounded-lg bg-secondary pt-5">
+      
       <div className="flex items-center gap-2 text-2xl self-start mx-5">
         <FaCode className="text-primary" />
         <h1 className="text-text font-medium">Tech Stack</h1>
@@ -33,10 +34,11 @@ export const TechStackCard = () => {
         <ul className="list-disc list-inside space-y-1">
           {slugs.map((slug, index) => (
             <li key={index} className="text-sm text-text">
-              {slug}
+              {slug === "nodedotjs" ? "nodejs" : slug}
             </li>
           ))}
         </ul>
+
         <IconCloud images={images} />
       </div>
     </div>
