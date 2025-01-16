@@ -142,15 +142,15 @@ export const ExpandableCard: React.FC<ExpandableCardProps> = ({ cards }) => {
           </div>
         ) : null}
       </AnimatePresence>
-      <ul className="max-w-4xl mx-auto w-full gap-4">
+      <ul className=" w-full gap-4">
         {cards.map((card) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
             key={`card-${card.title}-${id}`}
             onClick={() => setActive(card)}
-            className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-secondary-hover  rounded-xl cursor-pointer"
+            className="py-4 flex flex-col md:flex-row justify-between items-center hover:bg-secondary-hover  rounded-xl cursor-pointer"
           >
-            <div className="flex gap-2 flex-col md:flex-row  py-3">
+            <div className="flex gap-2 flex-col md:flex-row  py-3  w-full items-center">
               <motion.div layoutId={`image-${card.title}-${id}`}>
                 <img
                   src={card.src}

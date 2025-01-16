@@ -12,7 +12,7 @@ const App = () => {
     <LanguageProvider>
       <div className="flex flex-col items-center justify-center relative">
         <LanguageToggle />
-        <div className="w-[90%] md:w-2/5 space-y-5 m-5">
+        <div className="w-[90%]  xl:w-2/5 space-y-5 m-5">
           <HeaderCard />
           <AboutMeCard />
           <TechStackCard />
