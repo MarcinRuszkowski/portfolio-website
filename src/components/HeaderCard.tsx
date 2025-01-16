@@ -20,7 +20,7 @@ const pills = [
 export const HeaderCard = () => {
   return (
     <div className="flex flex-col items-center justify-center overflow-hidden border-2 border-[#656565] rounded-lg bg-secondary p-5 gap-5">
-      <div className="flex justify-start items-center gap-8 w-full">
+      <div className="flex flex-col sm:flex-row justify-start items-center gap-8 w-full">
         <img
           src={img}
           alt=""
