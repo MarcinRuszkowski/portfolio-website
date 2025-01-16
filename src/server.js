@@ -55,7 +55,7 @@ app.post("/send-email", async (req, res) => {
 
     //zwrotka
     await transporter.sendMail({
-      from: `"Champa" <${process.env.EMAIL_USER}>`,
+      from: `"Marcin Ruszkowski" <${process.env.EMAIL_USER}>`,
       to: email,
       replyTo: "void@gmail.com",
       subject: "Potwierdzenie otrzymania wiadomości",

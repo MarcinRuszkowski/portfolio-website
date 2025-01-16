@@ -4,13 +4,14 @@ import { Pill } from "./Pill";
 import { FaGithub, FaHeart, FaLocationDot } from "react-icons/fa6";
 import { IoIosMail } from "react-icons/io";
 import { MdCake } from "react-icons/md";
-import { FaLaptopCode } from "react-icons/fa";
+import { MdOutlineWork } from "react-icons/md";
+
 import { GrLanguage } from "react-icons/gr";
 import { TbFileCv } from "react-icons/tb";
 
 const pills = [
   { name: "Katowice, Poland", icon: <FaLocationDot /> },
-  { name: ">1year", icon: <FaLaptopCode /> },
+  { name: ">1year", icon: <MdOutlineWork /> },
   { name: "Polish & English", icon: <GrLanguage /> },
   { name: "23yo", icon: <MdCake /> },
   { name: "Dog Lover", icon: <FaHeart /> },

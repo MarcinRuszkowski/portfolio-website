@@ -44,13 +44,16 @@ export const ContactCard = () => {
           text: "",
         });
       } else {
-        setStatus("Wystąpił błąd serwera. Spróbuj ponownie.");
+        setStatus("Wystąpił błąd. Spróbuj ponownie.");
         setTimeout(() => {
           setStatus(null);
         }, 3000);
       }
     } catch (error) {
       setStatus(error.message || "Wystąpił błąd. Spróbuj ponownie.");
+      setTimeout(() => {
+        setStatus(null);
+      }, 3000);
     }
   };
 
