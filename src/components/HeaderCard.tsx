@@ -1,6 +1,6 @@
 import img from "../assets/sample_img.jpg";
 import cv from "../assets/Marcin-Ruszkowski-CV.pdf";
-import { Pill } from "./Pill";
+import { Pill } from "../component/Pill";
 import { FaGithub, FaHeart, FaLocationDot } from "react-icons/fa6";
 import { IoIosMail } from "react-icons/io";
 import { MdCake } from "react-icons/md";

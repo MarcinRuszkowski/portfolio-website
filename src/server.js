@@ -16,7 +16,8 @@ app.use(express.urlencoded({ extended: true }));
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15min
   max: 100, // liczba req od IP
-  message: "Zbyt wiele żądań z tego adresu IP. Spróbuj ponownie za 15 minut.",
+  message:
+    "Too many requests from this IP address. Please try again in 15 minutes.",
 });
 app.use(limiter);
 
@@ -24,15 +25,13 @@ app.post("/send-email", async (req, res) => {
   const { email, subject, text } = req.body;
 
   if (!email || !/\S+@\S+\.\S+/.test(email)) {
-    return res.status(400).json({ error: "Nieprawidłowy adres e-mail." });
+    return res.status(400).json({ error: "Email ERROR" });
   }
   if (!subject || subject.trim().length === 0) {
-    return res.status(400).json({ error: "Tytuł nie może być pusty." });
+    return res.status(400).json({ error: "Subject ERROR" });
   }
   if (!text || text.trim().length === 0) {
-    return res
-      .status(400)
-      .json({ error: "Treść wiadomości nie może być pusta." });
+    return res.status(400).json({ error: "Message ERROR" });
   }
 
   try {
@@ -51,7 +50,7 @@ app.post("/send-email", async (req, res) => {
       subject: subject,
       text: `From: ${email}\n\n${text}`,
     });
-    res.status(200).json({ message: "Wiadomość została wysłana!" });
+    res.status(200).json({ message: "MESSAGE SENT" });
 
     //zwrotka
     await transporter.sendMail({
@@ -70,7 +69,7 @@ app.post("/send-email", async (req, res) => {
     });
   } catch (error) {
     console.error("ERROR:", error);
-    res.status(500).json({ error: "Coś poszło nie tak... Spróbuj ponownie." });
+    res.status(500).json({ error: "Sending ERROR" });
   }
 });
 

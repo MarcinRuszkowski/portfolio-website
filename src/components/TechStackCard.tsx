@@ -1,4 +1,4 @@
-import { IconCloud } from "./ui/icon-cloud";
+import { IconCloud } from "../component/ui/icon-cloud";
 import { FaCode } from "react-icons/fa";
 
 const slugs = [
@@ -25,7 +25,6 @@ export const TechStackCard = () => {
 
   return (
     <div className="flex flex-col items-center justify-center overflow-hidden border-2 border-[#656565] rounded-lg bg-secondary pt-5">
-      
       <div className="flex items-center gap-2 text-2xl self-start mx-5">
         <FaCode className="text-primary" />
         <h1 className="text-text font-medium">Tech Stack</h1>

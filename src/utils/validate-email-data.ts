@@ -1,14 +1,32 @@
 import { EmailData } from "@/API/send-email";
 
-export const validateEmailData = (data: EmailData): string | null => {
+const text = {
+  PL: {
+    emailErr: "BŁĄD! Podaj poprawny adres e-mail.",
+    subjectErr: "BŁĄD! Temat nie może być pusty.",
+    textErr: "BŁĄD! Treść wiadomości nie może być pusta.",
+  },
+  EN: {
+    emailErr: "ERROR! Enter correct e-mail address.",
+    subjectErr: "ERROR! The subject cannot be empty.",
+    textErr: "ERROR! The content of the message cannot be empty.",
+  },
+};
+
+export const validateEmailData = (
+  data: EmailData,
+  currentLang: "PL" | "EN"
+): string | null => {
+  const currentText = text[currentLang];
+
   if (!data.email || !/\S+@\S+\.\S+/.test(data.email)) {
-    return "Podaj poprawny adres e-mail.";
+    return currentText.emailErr;
   }
   if (!data.subject) {
-    return "Tytuł nie może być pusty.";
+    return currentText.subjectErr;
   }
   if (!data.text) {
-    return "Treść wiadomości nie może być pusta.";
+    return currentText.textErr;
   }
   return null;
 };
