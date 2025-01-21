@@ -7,7 +7,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start": "node src/backend/server.js"
+    "portfolio": "node src/backend/server.js"
   },
   "dependencies": {
     "@radix-ui/react-hover-card": "^1.1.4",
