@@ -8,6 +8,7 @@ import path from "path";
 dotenv.config();
 
 const app = express();
+const PORT = process.env.PORT;
 
 app.use(cors());
 app.use(express.json());
@@ -52,6 +53,7 @@ app.post("/send-email", async (req, res) => {
     });
     res.status(200).json({ message: "MESSAGE SENT" });
 
+    //zwrotka
     await transporter.sendMail({
       from: `"Marcin Ruszkowski" <${process.env.EMAIL_USER}>`,
       to: email,
@@ -72,10 +74,12 @@ app.post("/send-email", async (req, res) => {
   }
 });
 
-app.use(express.static(path.join(__dirname, "../dist")));
+app.use(express.static(path.join(path.resolve(), "/dist")));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../dist", "index.html"));
+  res.sendFile(path.join(path.resolve(), "/dist", "index.html"));
 });
 
-export default app;
+app.listen(PORT, () => {
+  console.log(`Server is running on port http://localhost:${PORT}`);
+});
