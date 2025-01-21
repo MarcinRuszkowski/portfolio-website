@@ -119,7 +119,7 @@ export const ExpandableCard: React.FC<ExpandableCardProps> = ({ cards }) => {
                     title={active.ctaLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-3 py-2 text-xl rounded-full font-bold bg-primary text-secondary hover:text-gray-200"
+                    className="px-3 py-2 text-xl rounded-full font-bold bg-primary hover:bg-primary-hover text-secondary hover:text-gray-200"
                   >
                     <FaGithub />
                   </motion.a>

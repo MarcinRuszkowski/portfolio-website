@@ -24,8 +24,8 @@ export const TechStackCard = () => {
   );
 
   return (
-    <div className="flex flex-col items-start justify-center overflow-hidden border-2 border-[#656565] rounded-lg bg-secondary pt-5 md:pt-0 px-5 gap-5">
-      <div className="flex items-center gap-2 text-2xl self-start">
+    <div className="flex flex-col items-start justify-center overflow-hidden border-2 border-border rounded-lg bg-secondary  md:pt-0 px-5 gap-5">
+      <div className="flex items-center gap-2 text-2xl self-start pt-5">
         <FaCode className="text-primary" />
         <h1 className="text-text font-medium">Tech Stack</h1>
       </div>

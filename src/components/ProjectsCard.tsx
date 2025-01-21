@@ -67,7 +67,7 @@ export const ProjectsCard = () => {
   ];
 
   return (
-    <div className="flex flex-col items-start justify-center overflow-hidden border-2 border-[#656565] rounded-lg bg-secondary p-5 gap-5">
+    <div className="flex flex-col items-start justify-center overflow-hidden border-2 border-border rounded-lg bg-secondary p-5 gap-5">
       <div className="flex items-center gap-2 text-2xl">
         <FaFileCode className="text-primary" />
         <h1 className="text-text font-medium">{currentText.header}</h1>

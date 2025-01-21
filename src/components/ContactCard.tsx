@@ -100,7 +100,7 @@ export const ContactCard = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col items-start justify-center overflow-hidden border-2 border-[#656565] rounded-lg bg-secondary p-5 gap-5 text-text relative"
+      className="flex flex-col items-start justify-center overflow-hidden border-2 border-border rounded-lg bg-secondary p-5 gap-5 text-text relative"
     >
       <div className="flex items-center gap-2 text-2xl">
         <MdPermContactCalendar className="text-primary" />
@@ -163,7 +163,6 @@ export const ContactCard = () => {
           {status}
         </p>
       )}
-      
 
       <AnimatedButton
         elemBefore={{
