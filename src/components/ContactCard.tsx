@@ -3,6 +3,9 @@ import { MdPermContactCalendar } from "react-icons/md";
 import { sendEmail, EmailData } from "../API/send-email";
 import { validateEmailData } from "@/utils/validate-email-data";
 import { useLanguage } from "@/context/LanguageContext";
+import { AnimatedButton } from "@/component/AnimatedButton";
+import { FiChevronsRight } from "react-icons/fi";
+import { FaCheck } from "react-icons/fa";
 
 const text = {
   PL: {
@@ -16,7 +19,8 @@ const text = {
     emailLabel: "Podaj swój adres email",
     subjectLabel: "Podaj temat wiadomości",
     textLabel: "Podaj treść wiadomości",
-    button: "WYŚLIJ",
+    buttonBefore: "WYŚLIJ",
+    buttonAfter: "WYSŁANO",
   },
   EN: {
     header: "Contact",
@@ -29,7 +33,8 @@ const text = {
     emailLabel: "Enter your email address",
     subjectLabel: "Enter the subject of the message",
     textLabel: "Enter the content of the message",
-    button: "SEND",
+    buttonBefore: "SEND",
+    buttonAfter: "SENT",
   },
 };
 
@@ -158,9 +163,15 @@ export const ContactCard = () => {
           {status}
         </p>
       )}
-      <button className="rounded-lg px-3 py-1 bg-primary hover:bg-primary-hover text-lg text-secondary font-medium mt-6 self-center">
-        {currentText.button}
-      </button>
+      
+
+      <AnimatedButton
+        elemBefore={{
+          text: currentText.buttonBefore,
+          icon: <FiChevronsRight />,
+        }}
+        elemAfter={{ text: currentText.buttonAfter, icon: <FaCheck /> }}
+      />
     </form>
   );
 };

@@ -6,12 +6,16 @@ import { ProjectsCard } from "./components/ProjectsCard";
 import { ContactCard } from "./components/ContactCard";
 import { LanguageToggle } from "./layout/LanguageToggle";
 import { LanguageProvider } from "./context/LanguageContext";
+import ScrollProgress from "./component/ui/scroll-progress";
 
 const App = () => {
   return (
     <LanguageProvider>
+      <ScrollProgress className="top-0" />
       <div className="flex flex-col items-center justify-center relative">
-        <LanguageToggle />
+        <div className="absolute top-6 right-8 md:right-16 xl:top-5  xl:right-5">
+          <LanguageToggle />
+        </div>
         <div className="w-[90%]  xl:w-2/5 space-y-5 m-5">
           <HeaderCard />
           <AboutMeCard />

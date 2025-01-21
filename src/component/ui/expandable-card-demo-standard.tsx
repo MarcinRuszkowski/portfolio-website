@@ -148,9 +148,9 @@ export const ExpandableCard: React.FC<ExpandableCardProps> = ({ cards }) => {
             layoutId={`card-${card.title}-${id}`}
             key={`card-${card.title}-${id}`}
             onClick={() => setActive(card)}
-            className="py-4 flex flex-col md:flex-row justify-between items-center hover:bg-secondary-hover  rounded-xl cursor-pointer"
+            className="py-4 flex flex-col md:flex-row justify-between items-center hover:bg-secondary-hover  rounded-xl cursor-pointer px-2"
           >
-            <div className="flex gap-2 flex-col md:flex-row  py-3  w-full items-center">
+            <div className="flex gap-2 flex-col md:flex-row  py-3 w-full items-center">
               <motion.div layoutId={`image-${card.title}-${id}`}>
                 <img
                   src={card.src}

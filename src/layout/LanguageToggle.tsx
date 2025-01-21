@@ -8,7 +8,6 @@ export const LanguageToggle = () => {
   return (
     <button
       onClick={switchLanguage}
-      className="absolute top-6 right-8 md:right-16 xl:top-5  xl:right-5"
     >
       <img
         src={currentLang === "PL" ? PL : EN}

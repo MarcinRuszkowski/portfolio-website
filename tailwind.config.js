@@ -14,6 +14,7 @@ export default {
         "primary-hover": "#149348",
         secondary: "#1a1a1a",
         "secondary-hover": "#333333",
+        "secondary-active":"#404040",
         text: "#a1a1a1",
       },
     },
