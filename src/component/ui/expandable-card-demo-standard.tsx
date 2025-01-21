@@ -3,10 +3,14 @@ import { AnimatePresence, motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa6";
 import { IoEyeOutline } from "react-icons/io5";
 
-function useOutsideClick(ref, callback) {
+// Hook for detecting outside clicks
+function useOutsideClick(
+  ref: React.RefObject<HTMLElement>,
+  callback: () => void
+) {
   useEffect(() => {
-    function handleClickOutside(event) {
-      if (ref.current && !ref.current.contains(event.target)) {
+    function handleClickOutside(event: MouseEvent) {
+      if (ref.current && !ref.current.contains(event.target as Node)) {
         callback();
       }
     }
@@ -15,29 +19,33 @@ function useOutsideClick(ref, callback) {
   }, [ref, callback]);
 }
 
+// Type for each card
+type Card = {
+  title: string;
+  desc: string;
+  src: string;
+  ctaLink: string;
+  content: () => React.ReactNode;
+};
+
+// Props for the ExpandableCard component
 type ExpandableCardProps = {
-  cards: {
-    title: string;
-    desc: string;
-    src: string;
-    ctaLink: string;
-    content: () => void;
-  }[];
+  cards: Card[];
 };
 
 export const ExpandableCard: React.FC<ExpandableCardProps> = ({ cards }) => {
-  const [active, setActive] = useState(null);
-  const ref = useRef(null);
+  const [active, setActive] = useState<Card | null>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const id = useId();
 
   useEffect(() => {
-    function onKeyDown(event) {
+    function onKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
         setActive(null);
       }
     }
 
-    if (active && typeof active === "object") {
+    if (active) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
@@ -52,7 +60,7 @@ export const ExpandableCard: React.FC<ExpandableCardProps> = ({ cards }) => {
   return (
     <>
       <AnimatePresence>
-        {active && typeof active === "object" && (
+        {active && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -62,23 +70,14 @@ export const ExpandableCard: React.FC<ExpandableCardProps> = ({ cards }) => {
         )}
       </AnimatePresence>
       <AnimatePresence>
-        {active && typeof active === "object" ? (
+        {active && (
           <div className="fixed inset-0 grid place-items-center z-[100]">
             <motion.button
               key={`button-${active.title}-${id}`}
               layout
-              initial={{
-                opacity: 0,
-              }}
-              animate={{
-                opacity: 1,
-              }}
-              exit={{
-                opacity: 0,
-                transition: {
-                  duration: 0.05,
-                },
-              }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0, transition: { duration: 0.05 } }}
               className="flex absolute top-2 right-2 lg:hidden items-center justify-center bg-[#3c3c3c] rounded-full h-6 w-6"
               onClick={() => setActive(null)}
             >
@@ -130,27 +129,25 @@ export const ExpandableCard: React.FC<ExpandableCardProps> = ({ cards }) => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className=" text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto text-text [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
+                    className="text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto text-text [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
                   >
-                    {typeof active.content === "function"
-                      ? active.content()
-                      : active.content}
+                    {active.content()}
                   </motion.div>
                 </div>
               </div>
             </motion.div>
           </div>
-        ) : null}
+        )}
       </AnimatePresence>
-      <ul className=" w-full gap-4">
+      <ul className="w-full gap-4">
         {cards.map((card) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
             key={`card-${card.title}-${id}`}
             onClick={() => setActive(card)}
-            className="py-4 flex flex-col md:flex-row justify-between items-center hover:bg-secondary-hover  rounded-xl cursor-pointer px-2"
+            className="py-4 flex flex-col md:flex-row justify-between items-center hover:bg-secondary-hover rounded-xl cursor-pointer px-2"
           >
-            <div className="flex gap-2 flex-col md:flex-row  py-3 w-full items-center">
+            <div className="flex gap-2 flex-col md:flex-row py-3 w-full items-center">
               <motion.div layoutId={`image-${card.title}-${id}`}>
                 <img
                   src={card.src}
@@ -189,18 +186,9 @@ export const ExpandableCard: React.FC<ExpandableCardProps> = ({ cards }) => {
 export const CloseIcon = () => {
   return (
     <motion.svg
-      initial={{
-        opacity: 0,
-      }}
-      animate={{
-        opacity: 1,
-      }}
-      exit={{
-        opacity: 0,
-        transition: {
-          duration: 0.05,
-        },
-      }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0, transition: { duration: 0.05 } }}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"

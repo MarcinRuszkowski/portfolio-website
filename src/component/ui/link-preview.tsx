@@ -28,7 +28,6 @@ export const LinkPreview: React.FC<LinkPreviewProps> = ({
   className,
   width = 200,
   height = 125,
-  quality = 50,
   isStatic = false,
   imageSrc = "",
 }) => {

@@ -21,10 +21,8 @@ export const sendEmail = async (
     );
     return response.data;
   } catch (error: unknown) {
-    if (error.response && error.response.data) {
-      return error.response.data;
-    }
-    console.error("ERROR", error);
+    console.log(error);
+
     return null;
   }
 };
