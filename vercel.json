@@ -15,10 +15,5 @@
       "src": "/(.*)",
       "dest": "/src/backend/server.js"
     }
-  ],
-  "env": {
-    "EMAIL_USER": "@email_user",
-    "EMAIL_PASS": "@email_pass",
-    "PORT": "3000"
-  }
+  ]
 }
