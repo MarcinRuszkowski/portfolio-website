@@ -17,7 +17,7 @@ const distPath = path.resolve(
   "../frontend/dist"
 );
 
-app.use(cors());
+app.use(cors({ origin: process.env.ORIGIN }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -29,7 +29,7 @@ const limiter = rateLimit({
 });
 app.use(limiter);
 
-app.get("/api/helloworld", (res, req) => {
+app.get("/api/helloworld", (req, res) => {
   res.send("HELLO WORLD!!");
 });
 
