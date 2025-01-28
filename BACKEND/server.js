@@ -4,11 +4,18 @@ import dotenv from "dotenv";
 import cors from "cors";
 import rateLimit from "express-rate-limit";
 import path from "path";
+import { fileURLToPath } from "url";
+import { validateReqData } from "./utils/validateReqData.js";
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 4000;
+
+const distPath = path.resolve(
+  path.dirname(fileURLToPath(import.meta.url)),
+  "../frontend/dist"
+);
 
 app.use(cors());
 app.use(express.json());
@@ -23,17 +30,12 @@ const limiter = rateLimit({
 app.use(limiter);
 
 app.post("/send-email", async (req, res) => {
-  const { email, subject, text } = req.body;
+  const validationError = validateReqData(req.body);
+  if (validationError) {
+    return res.status(400).json(validationError);
+  }
 
-  if (!email || !/\S+@\S+\.\S+/.test(email)) {
-    return res.status(400).json({ error: "Email ERROR" });
-  }
-  if (!subject || subject.trim().length === 0) {
-    return res.status(400).json({ error: "Subject ERROR" });
-  }
-  if (!text || text.trim().length === 0) {
-    return res.status(400).json({ error: "Message ERROR" });
-  }
+  const { email, subject, text } = req.body;
 
   try {
     const transporter = nodemailer.createTransport({
@@ -74,10 +76,10 @@ app.post("/send-email", async (req, res) => {
   }
 });
 
-app.use(express.static(path.join(path.resolve(), "/dist")));
+app.use(express.static(distPath));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(path.resolve(), "/dist", "index.html"));
+  res.sendFile(path.join(distPath, "index.html"));
 });
 
 app.listen(PORT, () => {
