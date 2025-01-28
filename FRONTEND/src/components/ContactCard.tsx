@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { MdPermContactCalendar } from "react-icons/md";
 import { sendEmail, EmailData } from "../API/send-email";
 import { validateEmailData } from "@/utils/validate-email-data";

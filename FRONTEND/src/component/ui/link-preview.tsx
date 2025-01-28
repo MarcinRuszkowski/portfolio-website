@@ -7,7 +7,7 @@ import {
   useSpring,
 } from "framer-motion";
 import { encode } from "qss";
-import { cn } from "@/lib/utils"; // Assuming cn is a utility function for conditional classnames
+import { cn } from "@/lib/utils";
 
 // Define the props for the component
 type LinkPreviewProps = {
