@@ -1,7 +1,6 @@
 import axios from "axios";
 
-// const API_URL_LOCAL = import.meta.env.VITE_API_URL_LOCAL;
-const API_URL_LOCAL = "https://portfolio-api-2512.onrender.com";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export type EmailData = {
   email: string;
@@ -16,7 +15,7 @@ export const sendEmail = async (
 ): Promise<EmailResponse | null> => {
   try {
     const response = await axios.post<EmailResponse>(
-      `${API_URL_LOCAL}/api/send-email`,
+      `${API_URL}/api/send-email`,
       data,
       {
         headers: {

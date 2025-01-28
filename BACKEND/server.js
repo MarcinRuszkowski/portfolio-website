@@ -19,7 +19,7 @@ const distPath = path.resolve(
 
 app.use(
   cors({
-    origin: "https://portfolio-website-frontend-theta.vercel.app",
+    origin: process.env.ORIGIN,
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
