@@ -86,7 +86,6 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(distPath, "index.html"));
 });
 
-// app.listen(PORT, () => {
-//   console.log(`Server is running on port http://localhost:${PORT}`);
-// });
-export default app;
+app.listen(PORT, () => {
+  console.log(`Server is running on port http://localhost:${PORT}`);
+});
