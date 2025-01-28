@@ -19,7 +19,7 @@ const distPath = path.resolve(
 
 app.use(
   cors({
-    origin: "https://portfolio-api-2512.onrender.com",
+    origin: "https://portfolio-website-frontend-theta.vercel.app",
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
