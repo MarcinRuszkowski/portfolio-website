@@ -15,7 +15,7 @@ export const sendEmail = async (
 ): Promise<EmailResponse | null> => {
   try {
     const response = await axios.post<EmailResponse>(
-      `${API_URL}/send-email`,
+      `${API_URL}/api/send-email`,
       data,
       {
         headers: {

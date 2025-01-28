@@ -29,7 +29,7 @@ const limiter = rateLimit({
 });
 app.use(limiter);
 
-app.post("/send-email", async (req, res) => {
+app.post("/api/send-email", async (req, res) => {
   const validationError = validateReqData(req.body);
   if (validationError) {
     return res.status(400).json(validationError);
