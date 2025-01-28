@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API_URL_LOCAL = import.meta.env.VITE_API_URL_LOCAL;
+// const API_URL_LOCAL = import.meta.env.VITE_API_URL_LOCAL;
+const API_URL_LOCAL = "https://portfolio-api-2512.onrender.com";
 
 export type EmailData = {
   email: string;

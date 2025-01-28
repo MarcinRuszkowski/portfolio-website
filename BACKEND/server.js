@@ -17,7 +17,13 @@ const distPath = path.resolve(
   "../frontend/dist"
 );
 
-app.use(cors({ origin: process.env.ORIGIN }));
+app.use(
+  cors({
+    origin: "https://portfolio-api-2512.onrender.com",
+    methods: ["GET", "POST"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
