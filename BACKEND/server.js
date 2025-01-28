@@ -34,6 +34,8 @@ app.get("/", (req, res) => {
 });
 
 app.post("/api/send-email", async (req, res) => {
+  console.log('test');
+  
   const validationError = validateReqData(req.body);
   if (validationError) {
     return res.status(400).json(validationError);
