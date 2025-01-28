@@ -8,8 +8,6 @@ import { LanguageToggle } from "./layout/LanguageToggle";
 import { LanguageProvider } from "./context/LanguageContext";
 import ScrollProgress from "./component/ui/scroll-progress";
 
-
-
 const App = () => {
   return (
     <LanguageProvider>

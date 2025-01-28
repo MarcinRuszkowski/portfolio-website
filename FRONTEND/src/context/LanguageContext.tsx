@@ -19,7 +19,13 @@ export const useLanguage = () => {
   return context;
 };
 
-export const LanguageProvider = ({ children }: { children: ReactNode }) => {
+type LanguageProviderProps = {
+  children: ReactNode;
+};
+
+export const LanguageProvider: React.FC<LanguageProviderProps> = ({
+  children,
+}) => {
   const [currentLang, setCurrentLang] = useState<Language>(() => {
     return (localStorage.getItem("language") as Language) || "PL";
   });
