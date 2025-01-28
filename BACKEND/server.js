@@ -17,7 +17,7 @@ const distPath = path.resolve(
   "../frontend/dist"
 );
 
-app.use(cors());
+app.use(cors({ origin: process.env.ORIGIN || `http://localhost:${PORT}` }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -28,6 +28,10 @@ const limiter = rateLimit({
     "Too many requests from this IP address. Please try again in 15 minutes.",
 });
 app.use(limiter);
+
+app.get("/", (req, res) => {
+  res.sendFile("HELLO WORLD!!");
+});
 
 app.post("/api/send-email", async (req, res) => {
   const validationError = validateReqData(req.body);
