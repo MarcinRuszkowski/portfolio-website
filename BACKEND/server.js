@@ -30,7 +30,7 @@ const limiter = rateLimit({
 app.use(limiter);
 
 app.get("/", (req, res) => {
-  res.sendFile("HELLO WORLD!!");
+  res.send("HELLO WORLD!!");
 });
 
 app.post("/api/send-email", async (req, res) => {
