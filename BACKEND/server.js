@@ -17,7 +17,7 @@ const distPath = path.resolve(
   "../frontend/dist"
 );
 
-app.use(cors({ origin: process.env.ORIGIN || `http://localhost:${PORT}` }));
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -29,13 +29,13 @@ const limiter = rateLimit({
 });
 app.use(limiter);
 
-app.get("/", (req, res) => {
+app.get("/api/helloworld", (res, req) => {
   res.send("HELLO WORLD!!");
 });
 
 app.post("/api/send-email", async (req, res) => {
-  console.log('test');
-  
+  console.log("test");
+
   const validationError = validateReqData(req.body);
   if (validationError) {
     return res.status(400).json(validationError);
