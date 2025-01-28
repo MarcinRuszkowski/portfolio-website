@@ -2,6 +2,11 @@
   "name": "portfolio-website",
   "version": "1.0.0",
   "private": true,
+  "scripts": {
+    "start": "npm run build:frontend && npm run start:backend",
+    "build:frontend": "cd FRONTEND && npm run build",
+    "start:backend": "cd BACKEND && npm run server"
+  },
   "workspaces": [
     "backend",
     "frontend"
