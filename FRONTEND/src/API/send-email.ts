@@ -8,15 +8,21 @@ export type EmailData = {
   text: string;
 };
 
+export type EmailResponse = { text: string };
+
 export const sendEmail = async (
   data: EmailData
-): Promise<{ text: string } | null> => {
+): Promise<EmailResponse | null> => {
   try {
-    const response = await axios.post(`${API_URL}/send-email`, data, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const response = await axios.post<EmailResponse>(
+      `${API_URL}/send-email`,
+      data,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     return response.data;
   } catch (error: unknown) {
