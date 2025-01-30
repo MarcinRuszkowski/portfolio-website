@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { MdPermContactCalendar } from "react-icons/md";
 import { sendEmail, EmailData } from "../API/send-email";
 import { validateEmailData } from "@/utils/validate-email-data";
-import { useLanguage } from "@/context/LanguageContext";
+import { useLanguage } from "@/hooks/useLanguage";
 import { AnimatedButton } from "@/component/AnimatedButton";
 import { FiChevronsRight } from "react-icons/fi";
 import { FaCheck } from "react-icons/fa";
@@ -17,6 +17,7 @@ const text = {
     successStatus: "Wiadomość została wysłana!",
     errorStatus: "BŁĄD! Spróbuj ponownie.",
     emailLabel: "Podaj swój adres email",
+    emailPlaceholder: "nazwa@przykład.com",
     subjectLabel: "Podaj temat wiadomości",
     textLabel: "Podaj treść wiadomości",
     buttonBefore: "WYŚLIJ",
@@ -31,6 +32,7 @@ const text = {
     successStatus: "The message has been sent!",
     errorStatus: "ERROR! Please try again.",
     emailLabel: "Enter your email address",
+    emailPlaceholder: "name@example.com",
     subjectLabel: "Enter the subject of the message",
     textLabel: "Enter the content of the message",
     buttonBefore: "SEND",
@@ -118,7 +120,7 @@ export const ContactCard = () => {
             name="email"
             aria-label={currentText.emailLabel}
             className="rounded-lg px-3 py-1 focus:outline-none focus:scale-110 bg-secondary-hover"
-            placeholder="name@example.com"
+            placeholder={currentText.emailPlaceholder}
             required
           />
         </div>

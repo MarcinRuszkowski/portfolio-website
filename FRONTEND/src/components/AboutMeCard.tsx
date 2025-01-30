@@ -1,6 +1,6 @@
 import { TbInfoSquareFilled } from "react-icons/tb";
 import { HiAcademicCap } from "react-icons/hi";
-import { useLanguage } from "../context/LanguageContext";
+import { useLanguage } from "@/hooks/useLanguage";
 
 const text = {
   PL: {

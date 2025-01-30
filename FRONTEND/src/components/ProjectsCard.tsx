@@ -4,7 +4,7 @@ import quiz from "../assets/quiz.png";
 import champa from "../assets/champa.png";
 import cms from "../assets/cms.png";
 import taskManager from "../assets/task-manager.png";
-import { useLanguage } from "@/context/LanguageContext";
+import { useLanguage } from "@/hooks/useLanguage";
 
 const text = {
   PL: {
@@ -19,7 +19,7 @@ const text = {
       "Prosta strona o moim psie - reproduktorze. Galeria zdjęć, osiągniecia przedstawione na lini czasu wraz ze zdjęciami i opisem. Formularz kontaktowy.",
   },
   EN: {
-    header: "Projekty",
+    header: "Projects",
     taskManagerDesc:
       "Task management app. You can add, edit, delete, and filter tasks.",
     CMSDesc:

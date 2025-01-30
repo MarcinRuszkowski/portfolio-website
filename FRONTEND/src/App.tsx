@@ -5,8 +5,8 @@ import { ExperienceCard } from "./components/ExperienceCard";
 import { ProjectsCard } from "./components/ProjectsCard";
 import { ContactCard } from "./components/ContactCard";
 import { LanguageToggle } from "./layout/LanguageToggle";
-import { LanguageProvider } from "./context/LanguageContext";
 import ScrollProgress from "./component/ui/scroll-progress";
+import { LanguageProvider } from "./context/LanguageProvider";
 
 const App = () => {
   return (
