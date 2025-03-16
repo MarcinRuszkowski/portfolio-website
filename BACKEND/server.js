@@ -12,10 +12,6 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 4000;
 
-const distPath = path.resolve(
-  path.dirname(fileURLToPath(import.meta.url)),
-  "../frontend/dist"
-);
 
 app.use(
   cors({
@@ -86,11 +82,6 @@ app.post("/api/send-email", async (req, res) => {
   }
 });
 
-app.use(express.static(distPath));
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(distPath, "index.html"));
-});
 
 app.listen(PORT, () => {
   console.log(`Server is running on port http://localhost:${PORT}`);
