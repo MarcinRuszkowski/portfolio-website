@@ -1,5 +1,4 @@
-import img from "../assets/sample_img.jpg";
-import cv from "../assets/Marcin-Ruszkowski-CV.pdf";
+import img from "../assets/prof.jpg";
 import cvImg from "../assets/cvImg.png";
 import { Pill } from "../component/Pill";
 import { FaGithub, FaHeart, FaLocationDot } from "react-icons/fa6";
@@ -15,7 +14,7 @@ const pills = [
   { name: "Katowice, Polska", icon: <FaLocationDot /> },
   { name: ">1year", icon: <MdOutlineWork /> },
   { name: "Polski & Angielski", icon: <GrLanguage /> },
-  { name: "23yo", icon: <MdCake /> },
+  { name: "24yo", icon: <MdCake /> },
   { name: "Dog Lover", icon: <FaHeart /> },
 ];
 
@@ -26,7 +25,7 @@ export const HeaderCard = () => {
         <img
           src={img}
           alt=""
-          className="w-[150px] h-[150px]  rounded-full border-2 border-border"
+          className="w-[150px] h-[150px]  rounded-full border-2 border-border object-cover"
         />
         <div className="flex flex-col text-primary">
           <h1 className="text-3xl font-bold">Marcin Ruszkowski</h1>
@@ -41,7 +40,7 @@ export const HeaderCard = () => {
               <IoIosMail />
             </LinkPreview>
             <LinkPreview
-              url={cv}
+              url="https://drive.google.com/file/d/15W1ilscaSQSjJK_mT2Zr_UELB7S7ocPl/view?usp=drive_link"
               imageSrc={cvImg}
               isStatic
               className="p-2 rounded-full text-text"
