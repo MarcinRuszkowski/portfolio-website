@@ -3,15 +3,13 @@ import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 import cors from "cors";
 import rateLimit from "express-rate-limit";
-import path from "path";
-import { fileURLToPath } from "url";
+
 import { validateReqData } from "./utils/validateReqData.js";
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 4000;
-
 
 app.use(
   cors({
@@ -82,7 +80,6 @@ app.post("/api/send-email", async (req, res) => {
   }
 });
 
-
-app.listen(PORT, () => {
-  console.log(`Server is running on port http://localhost:${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server is running`);
 });
