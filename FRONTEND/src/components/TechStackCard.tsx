@@ -16,10 +16,19 @@ const slugs = [
   "mongodb",
   "shadcnui",
   "github",
+  "npm",
+  "postman",
+  "zustand",
+  "tanstack query",
+  "vitest",
 ];
 
 export const TechStackCard = () => {
-  const images = slugs.map(
+  const filteredSlugs = slugs.filter(
+    (slug) => slug !== "zustand" && slug !== "tanstack query"
+  );
+
+  const images = filteredSlugs.map(
     (slug) => `https://cdn.simpleicons.org/${slug}/${slug}`
   );
 
