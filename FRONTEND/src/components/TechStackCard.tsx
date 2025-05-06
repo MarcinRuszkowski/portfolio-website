@@ -5,6 +5,7 @@ const slugs = [
   "typescript",
   "javascript",
   "react",
+  "react native",
   "redux",
   "tailwindcss",
   "html5",
@@ -12,6 +13,7 @@ const slugs = [
   "nodedotjs",
   "express",
   "git",
+  "angular",
   "python",
   "mongodb",
   "shadcnui",
@@ -19,16 +21,21 @@ const slugs = [
   "npm",
   "postman",
   "zustand",
-  "tanstack query",
+  "reactquery",
   "vitest",
 ];
 
 export const TechStackCard = () => {
-  const filteredSlugs = slugs.filter(
-    (slug) => slug !== "zustand" && slug !== "tanstack query"
+  const linkedSlugs = slugs.filter(
+    (slug) =>
+      slug !== "zustand" && slug !== "tanstack query" && slug !== "react native"
   );
 
-  const images = filteredSlugs.map(
+  const slugsName = slugs.filter(
+    (slug) => slug !== "reactquery" && slug !== ""
+  );
+
+  const images = linkedSlugs.map(
     (slug) => `https://cdn.simpleicons.org/${slug}/${slug}`
   );
 
@@ -40,7 +47,7 @@ export const TechStackCard = () => {
       </div>
       <div className="flex flex-col-reverse md:flex-row items-center w-full">
         <ul className="list-disc list-inside grid grid-cols-2 md:grid-cols-1 gap-y-1 gap-5 pb-5 md:pb-0 flex-none sm:self-start">
-          {slugs.map((slug, index) => (
+          {slugsName.map((slug, index) => (
             <li key={index} className="text-sm text-text">
               {slug === "nodedotjs" ? "nodejs" : slug}
             </li>
